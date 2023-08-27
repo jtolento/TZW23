@@ -1,0 +1,1 @@
+swnb_480bnd_trp_clr_SZA60.nc
