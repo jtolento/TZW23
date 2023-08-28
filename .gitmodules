@@ -1,0 +1,3 @@
+[submodule "RRTMG_SW"]
+	path = RRTMG_SW
+	url = git@github.com:jtolento/RRTMG_SW.git
