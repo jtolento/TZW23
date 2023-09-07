@@ -6,7 +6,7 @@ clear; close all; clc;
 input_args.direct_beam   = 1;   
 
 % COSINE OF SOLAR ZENITH ANGLE FOR DIRECT-BEAM RT
-sza = 63.6;
+sza = 63;
 input_args.coszen = cos(deg2rad(sza));
   
 % SNOW LAYER THICKNESSES [m]:
@@ -166,8 +166,8 @@ end
 
 
 [spc, brd] = binning(di);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/clr/input_mls_spc';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/clr/input_mls_brd';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/clr/input_mls_spc';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/clr/input_mls_brd';
 binned_albedo = spc;  % Replace with your binned albedo values
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
@@ -179,8 +179,8 @@ modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/cld/input_mls_spc';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/cld/input_mls_brd';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/cld/input_mls_spc';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/cld/input_mls_brd';
 binned_albedo = spc;  % Replace with your binned albedo values
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);

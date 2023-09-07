@@ -110,8 +110,8 @@ def label_axes(fig, labels=None, loc=None, **kwargs):
 ### --- END FUNCTIONS --- ###
 
 
-path_clr = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/clr/'
-path_cld = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/cld/'
+path_clr = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/clr/'
+path_cld = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/cld/'
 
 
 var = 7

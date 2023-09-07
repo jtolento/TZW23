@@ -4,7 +4,7 @@ clear; close all; clc;
 % 1= Direct-beam incident flux, 0= Diffuse incident flux
 % NOTE that cloudy-sky spectral fluxes are loaded when direct_beam=0
 input_args.direct_beam   = 1;   
-sza =63.6;;
+sza =63;
 input_args.coszen = cos(deg2rad(sza));
 
 % SNOW LAYER THICKNESSES [m]:
@@ -221,79 +221,79 @@ if (1==0)
 end
 
 [spc, brd] = binning(di1);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc1';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd1';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc1';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd1';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di2);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc2';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd2';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc2';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd2';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di3);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc3';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd3';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc3';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd3';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di4);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc4';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd4';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc4';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd4';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di5);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc5';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd5';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc5';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd5';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di6);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc6';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd6';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc6';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd6';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di7);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc7';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd7';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc7';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd7';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di8);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc8';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd8';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc8';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd8';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di9);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc9';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd9';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc9';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd9';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
 
 
 [spc, brd] = binning(di10);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc10';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd10';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc10';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd10';
 line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line)
@@ -324,72 +324,72 @@ di10 = snicarAD_v5(input_args);
 
 
 [spc, brd] = binning(di1);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc1';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd1';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc1';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd1';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di2);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc2';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd2';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc2';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd2';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di3);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc3';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd3';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc3';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd3';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di4);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc4';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd4';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc4';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd4';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di5);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc5';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd5';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc5';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd5';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di6);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc6';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd6';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc6';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd6';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di7);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc7';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd7';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc7';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd7';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 
 [spc, brd] = binning(di8);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc8';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd8';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc8';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd8';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di9);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc9';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd9';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc9';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd9';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
 [spc, brd] = binning(di10);
-spc_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc10';  % Replace with the actual file path
-brd_path = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd10';
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_spc10';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rho/input_mls_brd10';
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
