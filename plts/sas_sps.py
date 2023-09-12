@@ -36,7 +36,7 @@ def arr_alb(array): # Rearranges albedo from linear RRTM array scheme to linear 
 toa  = np.array(( 6,  64, 122, 180, 238, 296, 354, 412, 470, 528, 586, 644, 702, 760, 818))
 surf = np.array((57, 115, 173, 231, 289, 347, 405, 463, 521, 579, 637, 695, 753, 811, 869)) 
 
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_sza/'
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_sza/'
 filename_spc = np.array(('out_sas_spc89', 'out_sas_spc8', 'out_sas_spc7', 'out_sas_spc6', 'out_sas_spc5', 'out_sas_spc4', 'out_sas_spc3', 'out_sas_spc2', 'out_sas_spc1', 'out_sas_spc0'))
 
 filename_brd = np.array(('out_sas_brd89', 'out_sas_brd8', 'out_sas_brd7', 'out_sas_brd6', 'out_sas_brd5', 'out_sas_brd4', 'out_sas_brd3', 'out_sas_brd2', 'out_sas_brd1', 'out_sas_brd0'))
@@ -82,11 +82,20 @@ diff_net_toa = np.flip(diff_net_toa)
 c = np.flip(c)
 diff_net_atm = diff_net_toa - diff_net_boa
 
+print('SZA')
+print(diff_net_boa)
+print((diff_net_boa / np.flip(clr_sas_brd_nt_boa) ) *100)
+print('\n')
+
+print(diff_net_atm)
+print((diff_net_atm / np.flip((clr_sas_brd_nt_toa - clr_sas_brd_nt_boa)))*100)
+print('\n')
 
 fig, axs = plt.subplots(2, 2, figsize=(12,10))
 axs[0,0].plot(c, diff_net_boa, marker='o', label='BOA')
 #axs[0,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[0,0].plot(c, diff_net_atm, marker='o', label='ATM')
+axs[0,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[0,0].set_title('Solar Zenith Angle')
 axs[0,0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
 
@@ -104,9 +113,11 @@ axs[0,0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
 
 ### CLOUD OPTICAL DEPTH ###
 
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_tau/'
-filename_brd = np.array(('out_sas_brd0', 'out_sas_brdpt1', 'out_sas_brdpt2', 'out_sas_brdpt3', 'out_sas_brdpt4', 'out_sas_brdpt5', 'out_sas_brdpt7', 'out_sas_brd1', 'out_sas_brd1pt5', 'out_sas_brd2', 'out_sas_brd2pt5', 'out_sas_brd3','out_sas_brd4', 'out_sas_brd6', 'out_sas_brd8', 'out_sas_brd10', 'out_sas_brd15','out_sas_brd25','out_sas_brd35','out_sas_brd55','out_sas_brd75','out_sas_brd100'))
-filename_spc = np.array(('out_sas_spc0', 'out_sas_spcpt1', 'out_sas_spcpt2', 'out_sas_spcpt3', 'out_sas_spcpt4', 'out_sas_spcpt5', 'out_sas_spcpt7', 'out_sas_spc1', 'out_sas_spc1pt5', 'out_sas_spc2', 'out_sas_spc2pt5', 'out_sas_spc3','out_sas_spc4', 'out_sas_spc6', 'out_sas_spc8', 'out_sas_spc10', 'out_sas_spc15','out_sas_spc25','out_sas_spc35','out_sas_spc55','out_sas_spc75','out_sas_spc100'))
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_tau/'
+filename_brd = np.array(('out_sas_brd0', 'out_sas_brd01', 'out_sas_brd02', 'out_sas_brd03', 'out_sas_brd04', 'out_sas_brd05', 'out_sas_brd06', 'out_sas_brd07', 'out_sas_brd08', 'out_sas_brd09','out_sas_brdpt1', 'out_sas_brdpt2', 'out_sas_brdpt3', 'out_sas_brdpt4', 'out_sas_brdpt5', 'out_sas_brdpt7', 'out_sas_brd1', 'out_sas_brd1pt5', 'out_sas_brd2', 'out_sas_brd2pt5', 'out_sas_brd3','out_sas_brd4', 'out_sas_brd6', 'out_sas_brd8', 'out_sas_brd10', 'out_sas_brd15','out_sas_brd25','out_sas_brd35','out_sas_brd55','out_sas_brd75'))
+
+filename_spc = np.array(('out_sas_spc0', 'out_sas_spc01', 'out_sas_spc02', 'out_sas_spc03', 'out_sas_spc04', 'out_sas_spc05', 'out_sas_spc06', 'out_sas_spc07', 'out_sas_spc08', 'out_sas_spc09','out_sas_spcpt1', 'out_sas_spcpt2', 'out_sas_spcpt3', 'out_sas_spcpt4', 'out_sas_spcpt5', 'out_sas_spcpt7', 'out_sas_spc1', 'out_sas_spc1pt5', 'out_sas_spc2', 'out_sas_spc2pt5', 'out_sas_spc3','out_sas_spc4', 'out_sas_spc6', 'out_sas_spc8', 'out_sas_spc10', 'out_sas_spc15','out_sas_spc25','out_sas_spc35','out_sas_spc55','out_sas_spc75'))
+
 
 cld_sas_spc_up_boa = np.zeros(len(filename_spc))
 cld_sas_spc_dn_boa = np.zeros(len(filename_spc))
@@ -137,21 +148,32 @@ for j in range( len(filename_spc) ) :
         cld_sas_brd_dn_toa[j] = np.loadtxt(path+filename_brd[j], skiprows = toa-1, max_rows=1, usecols=(5))
         cld_sas_brd_nt_toa[j] = np.loadtxt(path+filename_brd[j], skiprows = toa-1, max_rows=1, usecols=(6))
 
-c = np.array((0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 6.0, 8.0, 10.0,15.0,25.0,35.0,55.0,75.0,100))
+c = np.array((0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 6.0, 8.0, 10.0,15.0,25.0,35.0,55.0,75.0))
 diff_net_boa = cld_sas_spc_nt_boa - cld_sas_brd_nt_boa
 diff_net_toa = cld_sas_spc_nt_toa - cld_sas_brd_nt_toa
 diff_net_atm = diff_net_toa - diff_net_boa
+
+print('TAU')
+print(diff_net_boa)
+print((diff_net_boa / cld_sas_brd_nt_boa ) *100)
+print('\n')
+
+print(diff_net_atm)
+print((diff_net_atm / ((cld_sas_brd_nt_toa - cld_sas_brd_nt_boa)))*100)
+print('\n')
+
 axs[0,1].set_xscale('log')
 #axs[0,1].set_xscale('symlog')
 axs[0,1].plot(c[1:], diff_net_boa[1:], marker='o', label='BOA')
 axs[0,1].plot(c[1:], diff_net_atm[1:], marker='o', label='ATM')
+axs[0,1].plot(c[1:], diff_net_toa[1:], marker='o', label='TOA')
 axs[0,1].set_title('Cloud Optical Depth')
 axs[0,1].set(xlabel='Cloud Optical Depth', ylabel='Change in Net flux [W/m2]')
 
 
 ### Ice Grain  Radius  ###
 
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_rds/'
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_rds/'
 filename_brd = np.array(('out_sas_brd1','out_sas_brd2','out_sas_brd3','out_sas_brd4','out_sas_brd5','out_sas_brd6','out_sas_brd7','out_sas_brd8','out_sas_brd9','out_sas_brd10'))
 filename_spc = np.array(('out_sas_spc1','out_sas_spc2','out_sas_spc3','out_sas_spc4','out_sas_spc5','out_sas_spc6','out_sas_spc7','out_sas_spc8','out_sas_spc9','out_sas_spc10'))
 
@@ -188,13 +210,24 @@ diff_net_boa = cld_sas_spc_nt_boa - cld_sas_brd_nt_boa
 diff_net_toa = cld_sas_spc_nt_toa - cld_sas_brd_nt_toa
 diff_net_atm = diff_net_toa - diff_net_boa
 #print(diff_net_atm)
+
+print('RDS')
+print(diff_net_boa)
+print((diff_net_boa / cld_sas_brd_nt_boa ) *100)
+print('\n')
+
+print(diff_net_atm)
+print((diff_net_atm /((cld_sas_brd_nt_toa - cld_sas_brd_nt_boa)))*100)
+print('\n')
+
 axs[1,0].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[1,0].plot(c, diff_net_atm, marker='o', label='ATM')
+axs[1,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[1,0].set_title('Air Bubble Radius')
 axs[1,0].set(xlabel='Air Bubble Radius [$\mu m$]', ylabel='Change in Net flux [W/m2]')
 
 ### Water Vapor Concetration ###
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/'
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/'
 filename_brd = np.array(('out_sas_brd1','out_sas_brd2','out_sas_brd3','out_sas_brd4','out_sas_brd5','out_sas_brd6','out_sas_brd7','out_sas_brd8','out_sas_brd9','out_sas_brd100'))
 filename_spc = np.array(('out_sas_spc1','out_sas_spc2','out_sas_spc3','out_sas_spc4','out_sas_spc5','out_sas_spc6','out_sas_spc7','out_sas_spc8','out_sas_spc9','out_sas_spc100'))
 c = np.array((10,20,30,40,50,60,70,80,90,100))
@@ -233,13 +266,20 @@ diff_net_atm = diff_net_toa - diff_net_boa
 spc_atm_abs = cld_sas_spc_nt_toa - cld_sas_spc_nt_boa
 spc_boa_abs = cld_sas_spc_dn_boa - cld_sas_spc_up_boa
 spc_boa_alb = cld_sas_spc_up_boa / cld_sas_spc_dn_boa
+print('WVC')
 print(diff_net_boa)
 print((diff_net_boa / cld_sas_brd_nt_boa ) *100)
+print('\n')
+
 print(diff_net_atm)
+print((diff_net_atm / ((cld_sas_brd_nt_toa - cld_sas_brd_nt_boa)))*100)
+print('\n')
+
 axs[1,1].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[1,1].plot(c, diff_net_atm, marker='o', label='ATM')
+axs[1,1].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[1,1].set_title('Water Vapor Concentration')
-axs[1,1].set(xlabel='Percent Humidity [%]', ylabel='Change in Net flux [W/m2]')
+axs[1,1].set(xlabel='Column Relative Humidity [%]', ylabel='Change in Net flux [W/m2]')
 fig.suptitle('Ice - Single Parameter Sensitivity', fontsize='16',fontweight='bold')
 plt.legend()                
 

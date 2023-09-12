@@ -1,5 +1,5 @@
 % Driver for SNICARv3 or SNICAR-ADv3 subroutine
-clear; close all; clc; 
+clear all; close all; clc; 
     
 % 1= Direct-beam incident flux, 0= Diffuse incident flux
 % NOTE that cloudy-sky spectral fluxes are loaded when direct_beam=0
@@ -21,7 +21,7 @@ input_args.lyr_typ(1:nbr_lyr) = [3]; % snow, ice, ice
 
 % SNOW DENSITY FOR EACH LAYER (units: kg/m3)
 %input_args.rho_snw(1:nbr_lyr) = [400, 650, 850]; 
-input_args.rho_snw(1:nbr_lyr) = [100]; 
+input_args.rho_snw(1:nbr_lyr) = [1000]; 
 % SNOW GRAIN SIZE FOR EACH LAYER (units: microns):
 %input_args.rds_snw(1:nbr_lyr) = [500, 150, 300]; % snow grains, air bubbles, air bubbles 
  input_args.rds_snw(1:nbr_lyr) = [250];
@@ -86,7 +86,7 @@ input_args.glc_alg_mss_cnc(1:nbr_lyr)       = 0.0;  % GLACIER algae [UNITS ng/g]
 input_args.glc_alg_rds                      = 4;    % GLACIER algae radius [um]
 input_args.glc_alg_len                      = 40;   % GLACIER algae length [um]
     
-input_args.chl_wtr(1:nbr_lyr)                         = [0.0]; % [mg/m^3] Chlorophyl concentration in water
+%input_args.chl_wtr(1:nbr_lyr)                         = [0.0]; % [mg/m^3] Chlorophyl concentration in water
 % REFLECTANCE OF SURFACE UNDERLYING SNOW: (Value is applied to all
 % wavelengths. User can alternatively specify spectrally-dependent
 % ground albedo in snicar_v3.m)
@@ -115,6 +115,8 @@ input_args.chl_wtr = [3.0]; % [mg/m^3]
 sza = linspace(0, 90, 10);
 sza(10) = 89;
 
+
+
 input_args.coszen = cos(deg2rad(sza(1)));
 di1 = snicarAD_v5(input_args);
 input_args.coszen = cos(deg2rad(sza(2)));
@@ -136,27 +138,81 @@ di9 = snicarAD_v5(input_args);
 input_args.coszen = cos(deg2rad(sza(10)));
 di10 = snicarAD_v5(input_args);
 
+
+input_args.coszen = cos(deg2rad(5));
+di05 = snicarAD_v5(input_args);
+
+input_args.coszen = cos(deg2rad(15));
+di15 = snicarAD_v5(input_args);
+
+input_args.coszen = cos(deg2rad(25));
+di25 = snicarAD_v5(input_args);
+
+input_args.coszen = cos(deg2rad(18));
+di18 = snicarAD_v5(input_args);
+
+input_args.coszen = cos(deg2rad(22));
+di22 = snicarAD_v5(input_args);
+
+
+figure(1)
+scatter(sza(1), di1.alb_slr)
+hold on;
+scatter(sza(2), di2.alb_slr)
+hold on;
+scatter(sza(3), di3.alb_slr)
+hold on;
+scatter(sza(4), di4.alb_slr)
+hold on;
+scatter(sza(5), di5.alb_slr)
+hold on;
+scatter(sza(6), di6.alb_slr)
+hold on;
+scatter(sza(7), di7.alb_slr)
+hold on;
+scatter(sza(8), di8.alb_slr)
+hold on;
+scatter(sza(9), di9.alb_slr)
+hold on;
+scatter(sza(10), di10.alb_slr)
+
+%disp(di8.alb_slr)
+
+disp(di1.alb_slr)
+disp(di05.alb_slr)
+disp(di2.alb_slr)
+disp(di15.alb_slr)
+disp(di18.alb_slr)
+disp(di3.alb_slr)
+disp(di22.alb_slr)
+disp(di25.alb_slr)
+disp(di5.alb_slr)
+disp(di5.alb_slr)
+disp(di6.alb_slr)
+
+%%
+
 if (1==1)
-    figure(1)
-    plot(di1.wvl,di1.albedo,'linewidth',3, 'DisplayName','SZA = 89.0');
+    figure(2)
+    %plot(di1.wvl,di1.albedo,'linewidth',3, 'DisplayName','SZA = 0.0');
     hold on;
-    plot(di2.wvl,di2.albedo,'linewidth',3, 'DisplayName','SZA = 81.5');
+    plot(di2.wvl,di2.albedo,'linewidth',3, 'DisplayName','SZA = 10.0');
     hold on;
-    plot(di3.wvl,di3.albedo,'linewidth',3, 'DisplayName','SZA = 74.0');
+    plot(di3.wvl,di3.albedo,'linewidth',3, 'DisplayName','SZA = 20.0');
     hold on;
-    plot(di4.wvl,di4.albedo,'linewidth',3, 'DisplayName','SZA = 66.5');
+    plot(di4.wvl,di4.albedo,'linewidth',3, 'DisplayName','SZA = 30.0');
     hold on;
-    plot(di5.wvl,di5.albedo,'linewidth',3, 'DisplayName','SZA = 59.0');
+    %plot(di5.wvl,di5.albedo,'linewidth',3, 'DisplayName','SZA = 40.0');
     hold on;
-    plot(di6.wvl,di6.albedo,'linewidth',3, 'DisplayName','SZA = 51.5');
+    %plot(di6.wvl,di6.albedo,'linewidth',3, 'DisplayName','SZA = 50.0');
     hold on;
-    plot(di7.wvl,di7.albedo,'linewidth',3, 'DisplayName','SZA = 44.0');
+    %plot(di7.wvl,di7.albedo,'linewidth',3, 'DisplayName','SZA = 60.0');
     hold on;
-    plot(di8.wvl,di8.albedo,'linewidth',3, 'DisplayName','SZA = 36.5');
+    %plot(di8.wvl,di8.albedo,'linewidth',3, 'DisplayName','SZA = 70.0');
     hold on;
-    plot(di9.wvl,di9.albedo,'linewidth',3, 'DisplayName','SZA = 29.0');
+    %plot(di9.wvl,di9.albedo,'linewidth',3, 'DisplayName','SZA = 80.0');
     hold on;
-    plot(di10.wvl,di10.albedo,'linewidth',3, 'DisplayName','SZA = 21.5');
+    %plot(di10.wvl,di10.albedo,'linewidth',3, 'DisplayName','SZA = 89.0');
     hold on;
     axis([0.2 2.6 0 1]);
     set(gca,'xtick',0.2:0.5:5,'fontsize',14)
@@ -296,6 +352,51 @@ line = 7;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
 
+
+[spc, brd] = binning(di05);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc05';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd05';
+line = 7;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+
+[spc, brd] = binning(di15);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc15';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd15';
+line = 7;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+[spc, brd] = binning(di25);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc25';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd25';
+line = 7;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+[spc, brd] = binning(di18);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc18';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd18';
+line = 7;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+[spc, brd] = binning(di22);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc22';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd22';
+line = 7;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+
+%disp(di8.alb_slr)
+
+
+
+
+
+%%
 input_args.direct_beam   = 0;  
 input_args.coszen = cos(deg2rad(sza(1)));
 di1 = snicarAD_v5(input_args);
@@ -318,6 +419,19 @@ di9 = snicarAD_v5(input_args);
 input_args.coszen = cos(deg2rad(sza(10)));
 di10 = snicarAD_v5(input_args);
 
+input_args.coszen = cos(deg2rad(5));
+di05 = snicarAD_v5(input_args);
+input_args.coszen = cos(deg2rad(15));
+di15 = snicarAD_v5(input_args);
+
+input_args.coszen = cos(deg2rad(25));
+di25 = snicarAD_v5(input_args);
+
+
+input_args.coszen = cos(deg2rad(18));
+di18 = snicarAD_v5(input_args);
+input_args.coszen = cos(deg2rad(22));
+di22 = snicarAD_v5(input_args);
 
 
 [spc, brd] = binning(di1);
@@ -390,9 +504,49 @@ brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza
 line = 8;          %7 for direct, 8 for diffuse
 modify_rrtm_input(spc_path, spc,line);
 modify_rrtm_input(brd_path, brd,line);
+%disp('DONE')
+
+
+[spc, brd] = binning(di05);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc05';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd05';
+line = 8;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+
+[spc, brd] = binning(di15);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc15';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd15';
+line = 8;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+
+[spc, brd] = binning(di25);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc25';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd25';
+line = 8;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+
+[spc, brd] = binning(di18);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc18';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd18';
+line = 8;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+[spc, brd] = binning(di22);
+spc_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_spc22';  % Replace with the actual file path
+brd_path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_sza/input_trp_brd22';
+line = 8;          %7 for direct, 8 for diffuse
+modify_rrtm_input(spc_path, spc,line);
+modify_rrtm_input(brd_path, brd,line);
+
+
 disp('DONE')
-
-
 
 
 

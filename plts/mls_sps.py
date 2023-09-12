@@ -36,7 +36,7 @@ def arr_alb(array): # Rearranges albedo from linear RRTM array scheme to linear 
 toa  = np.array(( 6,  64, 122, 180, 238, 296, 354, 412, 470, 528, 586, 644, 702, 760, 818))
 surf = np.array((57, 115, 173, 231, 289, 347, 405, 463, 521, 579, 637, 695, 753, 811, 869)) 
 
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_sza/'
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_sza/'
 filename_spc = np.array(('out_mls_spc89', 'out_mls_spc8', 'out_mls_spc7', 'out_mls_spc6', 'out_mls_spc5', 'out_mls_spc4', 'out_mls_spc3', 'out_mls_spc2', 'out_mls_spc1', 'out_mls_spc0'))
 
 filename_brd = np.array(('out_mls_brd89', 'out_mls_brd8', 'out_mls_brd7', 'out_mls_brd6', 'out_mls_brd5', 'out_mls_brd4', 'out_mls_brd3', 'out_mls_brd2', 'out_mls_brd1', 'out_mls_brd0'))
@@ -86,7 +86,7 @@ diff_net_atm = diff_net_toa - diff_net_boa
 
 print('SZA')
 print(diff_net_boa)
-print((diff_net_boa / clr_mls_brd_nt_boa ) *100)
+print((diff_net_boa / np.flip(clr_mls_brd_nt_boa) ) *100)
 print('\n')
 
 print(diff_net_atm)
@@ -95,8 +95,8 @@ print('\n')
 
 fig, axs = plt.subplots(2, 2, figsize=(12,10))
 axs[0,0].plot(c, diff_net_boa, marker='o', label='BOA')
-#axs[0,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[0,0].plot(c, diff_net_atm, marker='o', label='ATM')
+axs[0,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[0,0].set_title('Solar Zenith Angle')
 axs[0,0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
 
@@ -114,9 +114,9 @@ axs[0,0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
 
 ### CLOUD OPTICAL DEPTH ###
 
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_tau/'
-filename_brd = np.array(('out_mls_brd0', 'out_mls_brdpt1', 'out_mls_brdpt2', 'out_mls_brdpt3', 'out_mls_brdpt4', 'out_mls_brdpt5', 'out_mls_brdpt7', 'out_mls_brd1', 'out_mls_brd1pt5', 'out_mls_brd2', 'out_mls_brd2pt5', 'out_mls_brd3','out_mls_brd4', 'out_mls_brd6', 'out_mls_brd8', 'out_mls_brd10', 'out_mls_brd15','out_mls_brd25','out_mls_brd35','out_mls_brd55','out_mls_brd75','out_mls_brd100'))
-filename_spc = np.array(('out_mls_spc0', 'out_mls_spcpt1', 'out_mls_spcpt2', 'out_mls_spcpt3', 'out_mls_spcpt4', 'out_mls_spcpt5', 'out_mls_spcpt7', 'out_mls_spc1', 'out_mls_spc1pt5', 'out_mls_spc2', 'out_mls_spc2pt5', 'out_mls_spc3','out_mls_spc4', 'out_mls_spc6', 'out_mls_spc8', 'out_mls_spc10', 'out_mls_spc15','out_mls_spc25','out_mls_spc35','out_mls_spc55','out_mls_spc75','out_mls_spc100'))
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_tau/'
+filename_brd = np.array(('out_mls_brd0', 'out_mls_brd01', 'out_mls_brd02', 'out_mls_brd03', 'out_mls_brd04', 'out_mls_brd05', 'out_mls_brd06', 'out_mls_brd07', 'out_mls_brd08', 'out_mls_brd09','out_mls_brdpt1', 'out_mls_brdpt2', 'out_mls_brdpt3', 'out_mls_brdpt4', 'out_mls_brdpt5', 'out_mls_brdpt7', 'out_mls_brd1', 'out_mls_brd1pt5', 'out_mls_brd2', 'out_mls_brd2pt5', 'out_mls_brd3','out_mls_brd4', 'out_mls_brd6', 'out_mls_brd8', 'out_mls_brd10', 'out_mls_brd15','out_mls_brd25','out_mls_brd35','out_mls_brd55','out_mls_brd75'))
+filename_spc = np.array(('out_mls_spc0', 'out_mls_spc01', 'out_mls_spc02', 'out_mls_spc03', 'out_mls_spc04', 'out_mls_spc05', 'out_mls_spc06', 'out_mls_spc07', 'out_mls_spc08', 'out_mls_spc09','out_mls_spcpt1', 'out_mls_spcpt2', 'out_mls_spcpt3', 'out_mls_spcpt4', 'out_mls_spcpt5', 'out_mls_spcpt7', 'out_mls_spc1', 'out_mls_spc1pt5', 'out_mls_spc2', 'out_mls_spc2pt5', 'out_mls_spc3','out_mls_spc4', 'out_mls_spc6', 'out_mls_spc8', 'out_mls_spc10', 'out_mls_spc15','out_mls_spc25','out_mls_spc35','out_mls_spc55','out_mls_spc75'))
 
 cld_mls_spc_up_boa = np.zeros(len(filename_spc))
 cld_mls_spc_dn_boa = np.zeros(len(filename_spc))
@@ -147,7 +147,7 @@ for j in range( len(filename_spc) ) :
         cld_mls_brd_dn_toa[j] = np.loadtxt(path+filename_brd[j], skiprows = toa-1, max_rows=1, usecols=(5))
         cld_mls_brd_nt_toa[j] = np.loadtxt(path+filename_brd[j], skiprows = toa-1, max_rows=1, usecols=(6))
 
-c = np.array((0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 6.0, 8.0, 10.0,15.0,25.0,35.0,55.0,75.0,100))
+c = np.array((0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 6.0, 8.0, 10.0,15.0,25.0,35.0,55.0,75.0))
 diff_net_boa = cld_mls_spc_nt_boa - cld_mls_brd_nt_boa
 diff_net_toa = cld_mls_spc_nt_toa - cld_mls_brd_nt_toa
 diff_net_atm = diff_net_toa - diff_net_boa
@@ -166,6 +166,7 @@ axs[0,1].set_xscale('log')
 #axs[0,1].set_xscale('symlog')
 axs[0,1].plot(c[1:], diff_net_boa[1:], marker='o', label='BOA')
 axs[0,1].plot(c[1:], diff_net_atm[1:], marker='o', label='ATM')
+axs[0,1].plot(c[1:], diff_net_toa[1:], marker='o', label='TOA')
 axs[0,1].set_title('Cloud Optical Depth')
 axs[0,1].set(xlabel='Cloud Optical Depth', ylabel='Change in Net flux [W/m2]')
 #print(diff_net_boa)
@@ -173,7 +174,7 @@ axs[0,1].set(xlabel='Cloud Optical Depth', ylabel='Change in Net flux [W/m2]')
 
 ### Snw Grain  Radius  ###
 
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rds/'
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_rds/'
 filename_brd = np.array(('out_mls_brd1','out_mls_brd2','out_mls_brd3','out_mls_brd4','out_mls_brd5','out_mls_brd6','out_mls_brd7','out_mls_brd8','out_mls_brd9','out_mls_brd10'))
 filename_spc = np.array(('out_mls_spc1','out_mls_spc2','out_mls_spc3','out_mls_spc4','out_mls_spc5','out_mls_spc6','out_mls_spc7','out_mls_spc8','out_mls_spc9','out_mls_spc10'))
 
@@ -222,12 +223,13 @@ print('\n')
 
 axs[1,0].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[1,0].plot(c, diff_net_atm, marker='o', label='ATM')
+axs[1,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[1,0].set_title('Effective Snow Grain Radius')
 axs[1,0].set(xlabel='Effective Snow Grain Radius [$\mu m$]', ylabel='Change in Net flux [W/m2]')
 
 
 ### Water Vapor Concetration ###
-path = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/'
+path = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/'
 #filename_brd = np.array(('out_mls_brd00','out_mls_brd01','out_mls_brd02','out_mls_brd03','out_mls_brd04','out_mls_brd05','out_mls_brd06','out_mls_brd07','out_mls_brd08','out_mls_brd09','out_mls_brd1','out_mls_brd2','out_mls_brd3','out_mls_brd4','out_mls_brd5','out_mls_brd6','out_mls_brd7','out_mls_brd8','out_mls_brd9','out_mls_brd100'))
 #filename_spc = np.array(('out_mls_spc00','out_mls_spc01','out_mls_spc02','out_mls_spc03','out_mls_spc04','out_mls_spc05','out_mls_spc06','out_mls_spc07','out_mls_spc08','out_mls_spc09','out_mls_spc1','out_mls_spc2','out_mls_spc3','out_mls_spc4','out_mls_spc5','out_mls_spc6','out_mls_spc7','out_mls_spc8','out_mls_spc9','out_mls_spc100'))
 c = np.array((0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100))
@@ -281,11 +283,12 @@ print((diff_net_atm / (cld_mls_brd_nt_toa - cld_mls_brd_nt_boa))*100)
 print('\n')
 axs[1,1].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[1,1].plot(c, diff_net_atm, marker='o', label='ATM')
+axs[1,1].plot(c, diff_net_toa, marker='o', label='TOA')
 #axs[1,1].plot(c, spc_atm_abs, marker='o', label='SPC ATM ABS')
 #axs[1,1].plot(c, spc_boa_abs, marker='o', label='SPC BOA ABS')
 #axs[1,1].plot(c, spc_boa_alb, marker='o', label='SPC BOA ALB')
 axs[1,1].set_title('Water Vapor Concentration')
-axs[1,1].set(xlabel='Percent Humidity [%]', ylabel='Change in Net flux [W/m2]')
+axs[1,1].set(xlabel='Column Relative Humidity [%]', ylabel='Change in Net flux [W/m2]')
 
 fig.suptitle('Snow - Single Parameter Sensitivity', fontsize='16',fontweight='bold')
 plt.legend()
@@ -298,7 +301,7 @@ plt.show()
 
 ### WATER VAPOR INSOLATION ###
 def wtr_plot(filename, humidity):
-        path_clr = '/Users/jtolento/ToZ23_ppr/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/'
+        path_clr = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/'
         surf = np.array((57, 115, 173, 231, 289, 347, 405, 463, 521, 579, 637, 695, 753, 811, 869))
         A = [200, 263.15789474, 344.82758621, 441.50110375, 625, 778.21011673, 1242.23602484, 1298.7012987, 1626.01626016, 1941.7475, 2150.53763441, 2500, 3076.92307692, 3846.15384615, 12195.12195]
         clr_mls_spc_dn_boa = np.zeros(len(surf))

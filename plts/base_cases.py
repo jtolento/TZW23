@@ -8,6 +8,8 @@ from netCDF4 import Dataset
 from os import path
 import numpy as np
 import xarray as xr
+import warnings
+warnings.filterwarnings("ignore")
 
 
 ### --- FUNCTIONS --- ###
@@ -593,22 +595,45 @@ fig.savefig('/Users/jtolento/Desktop/ppr1/base_bias.eps')
 plt.show()
 
 #### percent change ####
+print("MLS")
 mls_boa_per = clr_mls_diff_nt_boa / clr_mls_brd_nt_boa * 100
 print('MLS BOA Percent change ')
 print(mls_boa_per[14])
-sas_boa_per = clr_sas_diff_nt_boa / clr_sas_brd_nt_boa * 100
-print('SAS BOA Percent change ')
-print(sas_boa_per[14])
-trp_boa_per = clr_trp_diff_nt_boa / clr_trp_brd_nt_boa * 100
-print('TRP BOA Percent change ')
-print(trp_boa_per[14])
+
 
 mls_toa_per = clr_mls_diff_nt_toa / clr_mls_brd_nt_toa * 100
 print('MLS TOA Percent change ')
 print(mls_toa_per[14])
+
+mls_atm_per = ((clr_mls_spc_nt_toa - clr_mls_spc_nt_boa) - (clr_mls_brd_nt_toa - clr_mls_brd_nt_boa))
+print("atm = ")
+print(mls_atm_per[14])
+mls_atm_per = mls_atm_per / (clr_mls_brd_nt_toa - clr_mls_brd_nt_boa) *100
+#mls_atm_per = clr_mls_diff_nt_atm / clr_mls_brd_nt_atm * 100
+print("MLS ATM Percent change")
+print(mls_atm_per[14])
+
+print("SAS")
+sas_boa_per = clr_sas_diff_nt_boa / clr_sas_brd_nt_boa * 100
+print('SAS BOA Percent change ')
+print(sas_boa_per[14])
 sas_toa_per = clr_sas_diff_nt_toa / clr_sas_brd_nt_toa * 100
 print('SAS TOA Percent change ')
 print(sas_toa_per[14])
+
+sas_atm_per = ((clr_sas_spc_nt_toa - clr_sas_spc_nt_boa) - (clr_sas_brd_nt_toa - clr_sas_brd_nt_boa))
+print("atm = ")
+print(sas_atm_per[14])
+sas_atm_per = sas_atm_per / (clr_sas_brd_nt_toa - clr_sas_brd_nt_boa) *100
+#sas_atm_per = clr_sas_diff_nt_atm / clr_sas_brd_nt_atm * 100                                                                    
+print("SAS ATM Percent change")
+print(sas_atm_per[14])
+
+
+print("TRP")
+trp_boa_per = clr_trp_diff_nt_boa / clr_trp_brd_nt_boa * 100
+print('TRP BOA Percent change ')
+print(trp_boa_per[14])
 trp_toa_per = clr_trp_diff_nt_toa / clr_trp_brd_nt_toa * 100
 print('TRP TOA Percent change ')
 print(trp_toa_per[14])
@@ -777,9 +802,9 @@ axs[0].semilogx(x_values, spc_alb_sas_values, label='Bare-Ice', color='r')
 axs[0].semilogx(x_values, brd_alb_sas_values,linestyle='--', color='r')
 axs[0].semilogx(x_values, spc_alb_trp_values, label='Water', color='g')
 axs[0].semilogx(x_values, brd_alb_trp_values,linestyle='--', color='g')
-axs[0].set_title('Spectral vs Semi-Broadband Albedo', fontsize=14)
-axs[0].set_xlabel('Wavelength [$\mu$m]', fontsize=14)
-axs[0].set_ylabel('Albedo', fontsize=14)
+axs[0].set_title('Spectral vs Semi-Broadband Albedo', fontsize=16)
+axs[0].set_xlabel('Wavelength [$\mu$m]', fontsize=16)
+axs[0].set_ylabel('Albedo', fontsize=16)
 axs[0].set_xticks(ticks=B, labels=B, minor=False)
 axs[0].legend()
 axs[0].grid(which='major', axis='both')
@@ -799,13 +824,13 @@ axs[0].grid(which='major', axis='both')
 axs[1].semilogx(x_values, chg_mls_values, label='Snow', color='b')
 axs[1].semilogx(x_values, chg_sas_values, label='Bare-Ice', color='r')
 axs[1].semilogx(x_values, chg_trp_values, label='Water', color='g')
-axs[1].set_title('Change in Reflected Flux', fontsize=14)
-axs[1].set_xlabel('Wavelength [$\mu$m]', fontsize=14)
-axs[1].set_ylabel('Flux [W m$^{-2}$]', fontsize=14)
+axs[1].set_title('Change in Reflected Flux', fontsize=16)
+axs[1].set_xlabel('Wavelength [$\mu$m]', fontsize=16)
+axs[1].set_ylabel('Flux [W m$^{-2}$]', fontsize=16)
 axs[1].set_xticks(ticks=B, labels=B, minor=False)
 axs[1].legend()
 axs[1].grid(which='major', axis='both')
-fig.suptitle('Spectral vs Semi-Boradband Albedo', fontweight='bold', fontsize='16')
+fig.suptitle('Spectral vs Semi-Broadband Albedo', fontweight='bold', fontsize='16')
 plt.savefig('/Users/jtolento/Desktop/ppr1/base_spc_alb_up.eps')
 plt.show()
 
