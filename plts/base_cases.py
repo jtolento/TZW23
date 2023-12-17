@@ -10,6 +10,7 @@ import numpy as np
 import xarray as xr
 import warnings
 warnings.filterwarnings("ignore")
+import matplotlib.transforms as mtransforms
 
 
 ### --- FUNCTIONS --- ###
@@ -648,6 +649,19 @@ hr_trp = hr_trp_spc - hr_trp_brd
 
 
 fig, axs = plt.subplots(1, 2)
+
+#fig, axs = plt.subplot_mosaic([['a)', 'b)']],
+#                              layout='constrained')
+
+#for label, ax in axs.items():
+    # label physical distance in and down:
+#    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+#    ax.text(0.0, 1.0, label, transform=ax.transAxes + trans,
+#            fontsize='medium', verticalalignment='top', fontfamily='serif',
+#            bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
+
+
+
 axs[1].plot(hr_mls[29:mxrw_mls], p_mls[29:mxrw_mls], label='Snow', color='b')
 axs[0].plot(hr_mls_spc[29:mxrw_mls], p_mls[29:mxrw_mls], color='b')
 axs[0].plot(hr_mls_brd[29:mxrw_mls], p_mls[29:mxrw_mls], color='b', linestyle='--')
@@ -676,8 +690,37 @@ axs[1].set_xlabel('Warming Rate [K/day]', fontweight='bold', fontsize=14)
 axs[1].legend(prop={'size': 9})
 axs[1].grid( which='major', axis='both')
 
-fig.suptitle('Change in Solar Warming Rate', fontweight='bold', fontsize='16')
+label = ['a','b']
+for i in range(2):
+    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+    axs[i].text(0.85, 0.089, label[i], transform=axs[i].transAxes + trans,
+    fontsize='14', verticalalignment='top', fontfamily='serif',
+    bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
+
+
+
+fig.suptitle('Vertical Solar Warming Rate', fontweight='bold', fontsize='16')
+#fig.subplots_adjust(left=0.15,
+#                    bottom=0.15, 
+#                    right=0.95, 
+#                    top=0.9, 
+#                    wspace=0.4, 
+#                    hspace=0.4)
+
+
+
 plt.savefig('/Users/jtolento/Desktop/ppr1/base_hr.eps')
+
+#fig, axs = plt.subplot_mosaic([['a)', 'b)']],
+#                              layout='constrained')
+
+#label = ['a)','b)']
+#for i in range(2):
+#    print(label[i])
+#    trans = mtransforms.ScaledTranslation(-20/72, 7/72, fig.dpi_scale_trans)
+#    axs[i].text(0.5, -0.2, label[i], transform=axs[i].transAxes + trans,
+#    fontsize='16', va='bottom', fontfamily='serif')
+
 plt.show()
 
 
@@ -732,6 +775,37 @@ brd_alb_mls_values = []
 brd_alb_sas_values = []
 brd_alb_trp_values = []
 
+input_mls_brd_alb_dir = [0.2833, 0.2833, 0.2833, 0.2833, 0.2833, 0.2833, 0.2833, 0.2833, 0.1302, 0.0110, 0.0110, 0.0110, 0.0110, 0.2833] 
+input_sas_brd_alb_dir = [0.7052, 0.7052, 0.7052, 0.7052, 0.7052, 0.7052, 0.7052, 0.7052, 0.4227, 0.1973, 0.1973, 0.1973, 0.1973, 0.7052]
+input_trp_brd_alb_dir = [0.9632, 0.9632, 0.9632, 0.9632, 0.9632, 0.9632, 0.9632, 0.9632, 0.9479, 0.9361, 0.9361, 0.9361, 0.9361, 0.9632]
+
+input_mls_spc_alb_dir = [0.9846, 0.9745, 0.8148, 0.9334, 0.7769, 0.7654, 0.3699, 0.1341, 0.0290, 0.0092, 0.0057, 0.0070, 0.0087, 0.9888]
+input_sas_spc_alb_dir = [0.7551, 0.0553, 0.8502, 0.8447, 0.8386, 0.8354, 0.8271, 0.7136, 0.4074, 0.1747, 0.1165, 0.1391, 0.1658, 0.8176]
+input_trp_spc_alb_dir = [0.9420, 0.9927, 0.9709, 0.9686, 0.9662, 0.9654, 0.9646, 0.9631, 0.9564, 0.9275, 0.9406, 0.9512, 0.9449, 0.9566]
+
+
+mls_alb_vis = 0.9890
+mls_alb_nir = 0.7167
+sas_alb_vis = 0.8027
+sas_alb_nir = 0.2948
+trp_alb_vis = 0.0673
+trp_alb_nir = 0.0397
+
+
+input_mls_brd_alb_dir = arr_alb(input_mls_brd_alb_dir)
+input_mls_brd_alb_dir = 1 - input_mls_brd_alb_dir
+input_sas_brd_alb_dir = arr_alb(input_sas_brd_alb_dir)
+input_sas_brd_alb_dir = 1 - input_sas_brd_alb_dir
+input_trp_brd_alb_dir = arr_alb(input_trp_brd_alb_dir)
+input_trp_brd_alb_dir = 1 - input_trp_brd_alb_dir
+
+input_mls_spc_alb_dir = arr_alb(input_mls_spc_alb_dir)
+input_mls_spc_alb_dir = 1 - input_mls_spc_alb_dir
+input_sas_spc_alb_dir = arr_alb(input_sas_spc_alb_dir)
+input_sas_spc_alb_dir = 1 - input_sas_spc_alb_dir
+input_trp_spc_alb_dir = arr_alb(input_trp_spc_alb_dir)
+input_trp_spc_alb_dir = 1 - input_trp_spc_alb_dir
+
 for i in range(len(A) - 1):
     num_points = int(np.ceil(A[i + 1] - A[i]))
     x_values_range = np.linspace(A[i], A[i + 1], num=num_points, endpoint=False)
@@ -740,12 +814,16 @@ for i in range(len(A) - 1):
     chg_mls_values_range = [clr_mls_chg_up[i]] * num_points
     chg_sas_values_range = [clr_sas_chg_up[i]] * num_points
     chg_trp_values_range = [clr_trp_chg_up[i]] * num_points
-    spc_alb_mls_values_range = [clr_mls_spc_alb[i]] * num_points 
-    spc_alb_sas_values_range = [clr_sas_spc_alb[i]] * num_points
-    spc_alb_trp_values_range = [clr_trp_spc_alb[i]] * num_points
-    brd_alb_mls_values_range = [clr_mls_brd_alb[i]] * num_points
-    brd_alb_sas_values_range = [clr_sas_brd_alb[i]] * num_points
-    brd_alb_trp_values_range = [clr_trp_brd_alb[i]] * num_points
+    spc_alb_mls_values_range = [input_mls_spc_alb_dir[i]] * num_points
+    #input_mls_brd_alb_dir_range = [input_mls_brd_alb_dir] * num_points
+    spc_alb_sas_values_range = [input_sas_spc_alb_dir[i]] * num_points
+    spc_alb_trp_values_range = [input_trp_spc_alb_dir[i]] * num_points
+    #brd_alb_mls_values_range = [clr_mls_brd_alb[i]] * num_points
+    brd_alb_mls_values_range = [input_mls_brd_alb_dir[i]] * num_points
+    #brd_alb_sas_values_range = [clr_sas_brd_alb[i]] * num_points
+    #brd_alb_trp_values_range = [clr_trp_brd_alb[i]] * num_points
+    brd_alb_sas_values_range = [input_sas_brd_alb_dir[i]] * num_points
+    brd_alb_trp_values_range = [input_trp_brd_alb_dir[i]] * num_points
     
     x_values.extend(x_values_range)
     spc_values.extend(spc_values_range)
@@ -754,6 +832,7 @@ for i in range(len(A) - 1):
     chg_sas_values.extend(chg_sas_values_range)
     chg_trp_values.extend(chg_trp_values_range)
     spc_alb_mls_values.extend(spc_alb_mls_values_range)
+    #input_mls_brd_alb_dir.extend(input_mls_brd_alb_dir_range)
     spc_alb_sas_values.extend(spc_alb_sas_values_range)
     spc_alb_trp_values.extend(spc_alb_trp_values_range)
     brd_alb_mls_values.extend(brd_alb_mls_values_range)
@@ -770,6 +849,7 @@ chg_mls_values_last_range = [clr_mls_chg_up[-1]] * num_points_last_range
 chg_sas_values_last_range = [clr_sas_chg_up[-1]] * num_points_last_range
 chg_trp_values_last_range = [clr_trp_chg_up[-1]] * num_points_last_range
 spc_alb_mls_values_last_range = [clr_mls_spc_alb[-1]] * num_points_last_range
+#input_mls_brd_alb_dir_last_range = input_mls_brd_alb_dir[-1]* num_points_last_range
 spc_alb_sas_values_last_range = [clr_sas_spc_alb[-1]] * num_points_last_range
 spc_alb_trp_values_last_range = [clr_trp_spc_alb[-1]] * num_points_last_range
 brd_alb_mls_values_last_range = [clr_mls_brd_alb[-1]] * num_points_last_range
@@ -784,6 +864,7 @@ chg_mls_values.extend(chg_mls_values_last_range)
 chg_sas_values.extend(chg_sas_values_last_range)
 chg_trp_values.extend(chg_trp_values_last_range)
 spc_alb_mls_values.extend(spc_alb_mls_values_last_range)
+#input_mls_brd_alb_dir.extend(input_mls_brd_alb_dir_last_range)
 spc_alb_sas_values.extend(spc_alb_sas_values_last_range)
 spc_alb_trp_values.extend(spc_alb_trp_values_last_range)
 brd_alb_mls_values.extend(brd_alb_mls_values_last_range)
@@ -796,6 +877,30 @@ B = A[::2]
 x_values = [x / 1000 for x in x_values]
 
 fig, axs = plt.subplots(2, 1, figsize = (12,12))
+
+
+
+vis_bnds = np.array((0.2,0.7))
+nir_bnds = np.array((0.7,12.2))
+mls_vis = np.array((mls_alb_vis,mls_alb_vis))
+mls_nir = np.array((mls_alb_nir,mls_alb_nir))
+sas_vis = np.array((sas_alb_vis,sas_alb_vis))
+sas_nir = np.array((sas_alb_nir,sas_alb_nir))
+trp_vis = np.array((trp_alb_vis,trp_alb_vis))
+trp_nir = np.array((trp_alb_nir,trp_alb_nir))
+#axs[0].plot(vis_bnds, mls_vis, marker='None', color='dimgrey', linestyle='-')
+#axs[0].plot(vis_bnds, sas_vis, marker='None', color='dimgrey', linestyle='-')
+#axs[0].plot(vis_bnds, trp_vis, marker='None', color='dimgrey', linestyle='-')
+#axs[0].plot(nir_bnds, mls_nir, marker='None', color='dimgrey', linestyle='-')
+#axs[0].plot(nir_bnds, sas_nir, marker='None', color='dimgrey', linestyle='-')
+#axs[0].plot(nir_bnds, trp_nir, marker='None', color='dimgrey', linestyle='-')
+
+
+#axs[0].axhline(y = sas_alb_vis, xmin = 0.2, xmax = 0.7, color='r')
+#axs[0].axhline(y = sas_alb_nir, xmin = 0.7, xmax = 12.2, color='r')
+#axs[0].axhline(y = trp_alb_vis, xmin = 0.2, xmax = 0.7, color='r')
+#axs[0].axhline(y = trp_alb_nir, xmin = 0.7, xmax = 12.2, color='r')
+
 axs[0].semilogx(x_values, spc_alb_mls_values, label='Snow', color='b')
 axs[0].semilogx(x_values, brd_alb_mls_values,linestyle='--', color='b')
 axs[0].semilogx(x_values, spc_alb_sas_values, label='Bare-Ice', color='r')
@@ -808,7 +913,6 @@ axs[0].set_ylabel('Albedo', fontsize=16)
 axs[0].set_xticks(ticks=B, labels=B, minor=False)
 axs[0].legend()
 axs[0].grid(which='major', axis='both')
-
 
 #plt.semilogx(x_values, spc_values, label='Spectral', color='b')
 #plt.semilogx(x_values, brd_values, label='Semi-broadband', linestyle='--', color='b')
@@ -831,6 +935,15 @@ axs[1].set_xticks(ticks=B, labels=B, minor=False)
 axs[1].legend()
 axs[1].grid(which='major', axis='both')
 fig.suptitle('Spectral vs Semi-Broadband Albedo', fontweight='bold', fontsize='16')
+
+label = ['a','b']
+for i in range(2):
+    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+    axs[i].text(0.96, 0.09, label[i], transform=axs[i].transAxes + trans,
+    fontsize='16', verticalalignment='top', fontfamily='serif',
+    bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
+
+
 plt.savefig('/Users/jtolento/Desktop/ppr1/base_spc_alb_up.eps')
 plt.show()
 

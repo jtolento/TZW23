@@ -8,6 +8,7 @@ from netCDF4 import Dataset
 from os import path
 import numpy as np
 import xarray as xr
+import matplotlib.transforms as mtransforms
 
 def arrange(array): # Rearranges plots from linear RRTM array scheme to linear array
         array1 = array[1:14]
@@ -103,6 +104,10 @@ diff_alb = np.flip(clr_trp_spc_up_boa / clr_trp_spc_dn_boa) - np.flip(clr_trp_br
 #plt.legend()
 #plt.show()
 fig, axs = plt.subplots(1, 3, figsize=(18,5))
+axs[0].axhline(y=0.0, color='k', linestyle='-')
+axs[1].axhline(y=0.0, color='k', linestyle='-')
+axs[2].axhline(y=0.0, color='k', linestyle='-')
+
 axs[0].plot(c, diff_net_boa, marker='o', label='BOA')
 #axs[0,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[0].plot(c, diff_net_atm, marker='o', label='ATM')
@@ -111,7 +116,7 @@ axs[0].plot(c, diff_net_toa, marker='o', label='TOA')
 #axs[0].plot(c, ( (diff_abs)* np.flip(clr_trp_spc_dn_toa)), label='diff', marker='x')
 #axs[0].plot(c, nt_flx, label='diff', marker='x')
 axs[0].set_title('Solar Zenith Angle')
-axs[0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
+axs[0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m$^2$]')
 
 
 #diff_net_boa = diff_net_boa/np.cos(np.deg2rad(c))
@@ -119,7 +124,7 @@ axs[0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
 #plt.plot(c, diff_net_boa, marker='o', label='BOA')
 #plt.plot(c, diff_net_toa, marker='o', label='TOA')
 #plt.xlabel('Solar Zenith Angle')
-#plt.ylabel('Change in Net flux [W/m2]')
+#plt.ylabel('Change in Net flux [W/m$^2$]')
 #plt.title('Cosine Weighted Change in Net Flux vs Solar Zenith Angle')
 #plt.legend()
 #plt.show()
@@ -170,7 +175,7 @@ axs[1].plot(c[1:], diff_net_boa[1:], marker='o', label='BOA')
 axs[1].plot(c[1:], diff_net_atm[1:], marker='o', label='ATM')
 axs[1].plot(c[1:], diff_net_toa[1:], marker='o', label='TOA')
 axs[1].set_title('Cloud Optical Depth')
-axs[1].set(xlabel='Cloud Optical Depth', ylabel='Change in Net flux [W/m2]')
+axs[1].set(xlabel='Cloud Optical Depth', ylabel='Change in Net flux [W/m$^2$]')
 #print(diff_net_boa)
 #print((diff_net_boa / cld_trp_brd_nt_boa ) *100)
 
@@ -217,7 +222,7 @@ diff_net_atm = diff_net_toa - diff_net_boa
 axs[1,0].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[1,0].plot(c, diff_net_atm, marker='o', label='ATM')
 axs[1,0].set_title('Effective Snow Grain Radius')
-axs[1,0].set(xlabel='Effective Snow Grain Radius [$\mu m$]', ylabel='Change in Net flux [W/m2]')
+axs[1,0].set(xlabel='Effective Snow Grain Radius [$\mu m$]', ylabel='Change in Net flux [W/m$^2$]')
 '''
 
 ### Water Vapor Concetration ###
@@ -278,85 +283,27 @@ axs[2].plot(c, diff_net_toa, marker='o', label='TOA')
 #axs[1,1].plot(c, spc_boa_abs, marker='o', label='SPC BOA ABS')
 #axs[1,1].plot(c, spc_boa_alb, marker='o', label='SPC BOA ALB')
 axs[2].set_title('Water Vapor Concentration')
-axs[2].set(xlabel='Column Relative Humidity [%]', ylabel='Change in Net flux [W/m2]')
+axs[2].set(xlabel='Column Relative Humidity [%]', ylabel='Change in Net flux [W/m$^2$]')
 
 fig.suptitle('Water - Single Parameter Sensitivity', fontsize='16',fontweight='bold')
 plt.legend()
 
+label = ['a','b','c']
+for i in range(3):
+    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+    axs[i].text(0.9, 0.1, label[i], transform=axs[i].transAxes + trans,
+    fontsize='14', verticalalignment='top', fontfamily='serif',
+    bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
+
+
+
+#axs[0].axhline(y=0.0, color='k', linestyle='-')
+#axs[1].axhline(y=0.0, color='k', linestyle='-')
+#axs[2].axhline(y=0.0, color='k', linestyle='-')
+
+axs[2].set_ylim(-0.1,0.05)
 plt.savefig('/Users/jtolento/Desktop/ppr1/trp_sps.eps')
 plt.show()
 
 
 
-'''
-### WATER VAPOR INSOLATION ###
-def wtr_plot(filename, humidity):
-        path_clr = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/'
-        surf = np.array((57, 115, 173, 231, 289, 347, 405, 463, 521, 579, 637, 695, 753, 811, 869))
-        A = [200, 263.15789474, 344.82758621, 441.50110375, 625, 778.21011673, 1242.23602484, 1298.7012987, 1626.01626016, 1941.7475, 2150.53763441, 2500, 3076.92307692, 3846.15384615, 12195.12195]
-        clr_trp_spc_dn_boa = np.zeros(len(surf))
-        if (filename == 'snicar'):
-                clr_trp_spc_dn_boa = np.array((0.0000, 0.0159,0.1181,0.2993,0.1904, 0.2483, 0.0233, 0.0419, 0.0262, 0.0112, 0.0164, 0.0003, 0.0051, 0.0035))
-                humidity = 'SNICAR'
-        else:
-                for i in range( len(surf) ) :
-                        clr_trp_spc_dn_boa[i] = np.loadtxt(path_clr+filename, skiprows = surf[i]-1, max_rows=1, usecols=(5))
-                
-                max_flux = clr_trp_spc_dn_boa[0]
-
-                humidity = np.char.mod('%s%%', humidity)
-
-                clr_trp_spc_dn_boa = arrange(clr_trp_spc_dn_boa)
-                clr_trp_spc_dn_boa = clr_trp_spc_dn_boa / max_flux
-        
-        x_values = []
-        spc_values = []
-        brd_values = []
-        chg_trp_values = []
-        chg_sas_values = []
-        chg_trp_values = []
-        
-        spc_alb_trp_values = []
-        spc_alb_sas_values = []
-        spc_alb_trp_values = []
-        brd_alb_trp_values = []
-        brd_alb_sas_values = []
-        brd_alb_trp_values = []
-
-        for i in range(len(A) - 1):
-                num_points = int(np.ceil(A[i + 1] - A[i]))
-                x_values_range = np.linspace(A[i], A[i + 1], num=num_points, endpoint=False)
-                spc_values_range = [clr_trp_spc_dn_boa[i]] * num_points
-                x_values.extend(x_values_range)
-                spc_values.extend(spc_values_range)
-                
-
-        num_points_last_range = int(np.ceil(A[-1] - A[-2]))
-        x_values_last_range = np.linspace(A[-2], A[-1], num=num_points_last_range, endpoint=False)
-        spc_values_last_range = [clr_trp_spc_dn_boa[-1]] * num_points_last_range
-        
-
-        A = [round(x / 1000, 2) for x in A]
-        B = A[::2]
-        x_values = [x / 1000 for x in x_values]
-        plt.semilogx(x_values, spc_values, label=humidity)
-        plt.xticks(ticks=B, labels=B, minor=False)
-
-
-plt.figure(figsize=(9,6))
-#for i in range(len(filename_spc)):
-for i in range(0, 10, 2):
-        wtr_plot(filename_spc[i],c[i])
-
-
-
-wtr_plot('snicar',c[i])
-
-
-plt.title('Fractional Flux vs Humidty',  fontweight='bold',  fontsize=16)
-plt.xlabel('Wavelength [$\mu$m]', fontsize=14)
-plt.ylabel('Fractional Flux', fontsize=14)
-plt.grid(which='major', axis='both')
-plt.legend()
-plt.show()
-'''

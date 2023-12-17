@@ -8,6 +8,9 @@ from netCDF4 import Dataset
 from os import path
 import numpy as np
 import xarray as xr
+import warnings
+warnings.filterwarnings("ignore")
+import matplotlib.transforms as mtransforms
 
 def arrange(array): # Rearranges plots from linear RRTM array scheme to linear array
         array1 = array[1:14]
@@ -93,12 +96,24 @@ print(diff_net_atm)
 print((diff_net_atm / np.flip((clr_mls_brd_nt_toa - clr_mls_brd_nt_boa)))*100)
 print('\n')
 
+boa_sza = (diff_net_boa / np.flip(clr_mls_brd_nt_boa) ) *100
+atm_sza = (diff_net_atm / np.flip((clr_mls_brd_nt_toa - clr_mls_brd_nt_boa)))*100
+toa_sza = (diff_net_toa / np.flip(clr_mls_brd_nt_toa) ) *100
+c_sza   = c
+
+
 fig, axs = plt.subplots(2, 2, figsize=(12,10))
+axs[0,0].axhline(y=0.0, color='k', linestyle='-')
+axs[1,0].axhline(y=0.0, color='k', linestyle='-')
+axs[0,1].axhline(y=0.0, color='k', linestyle='-')
+axs[1,1].axhline(y=0.0, color='k', linestyle='-')
+
+
 axs[0,0].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[0,0].plot(c, diff_net_atm, marker='o', label='ATM')
 axs[0,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[0,0].set_title('Solar Zenith Angle')
-axs[0,0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
+axs[0,0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m$^2$]')
 
 
 #diff_net_boa = diff_net_boa/np.cos(np.deg2rad(c))
@@ -106,7 +121,7 @@ axs[0,0].set(xlabel='Solar Zenith Angle', ylabel='Change in Net flux [W/m2]')
 #plt.plot(c, diff_net_boa, marker='o', label='BOA')
 #plt.plot(c, diff_net_toa, marker='o', label='TOA')
 #plt.xlabel('Solar Zenith Angle')
-#plt.ylabel('Change in Net flux [W/m2]')
+#plt.ylabel('Change in Net flux [W/m$^2$]')
 #plt.title('Cosine Weighted Change in Net Flux vs Solar Zenith Angle')
 #plt.legend()
 #plt.show()
@@ -161,14 +176,17 @@ print(diff_net_atm)
 print((diff_net_atm / (cld_mls_brd_nt_toa - cld_mls_brd_nt_boa))*100)
 print('\n')
 
-
+boa_cld = (diff_net_boa / (cld_mls_brd_nt_boa) ) *100
+atm_cld = (diff_net_atm / ((cld_mls_brd_nt_toa - cld_mls_brd_nt_boa)))*100
+toa_cld = (diff_net_toa / (cld_mls_brd_nt_toa) ) *100
+c_cld   = c
 axs[0,1].set_xscale('log')
 #axs[0,1].set_xscale('symlog')
 axs[0,1].plot(c[1:], diff_net_boa[1:], marker='o', label='BOA')
 axs[0,1].plot(c[1:], diff_net_atm[1:], marker='o', label='ATM')
 axs[0,1].plot(c[1:], diff_net_toa[1:], marker='o', label='TOA')
 axs[0,1].set_title('Cloud Optical Depth')
-axs[0,1].set(xlabel='Cloud Optical Depth', ylabel='Change in Net flux [W/m2]')
+axs[0,1].set(xlabel='Cloud Optical Depth', ylabel='Change in Net flux [W/m$^2$]')
 #print(diff_net_boa)
 #print((diff_net_boa / cld_mls_brd_nt_boa ) *100)
 
@@ -219,13 +237,16 @@ print(diff_net_atm)
 print(diff_net_atm / (cld_mls_brd_nt_toa - cld_mls_brd_nt_boa))
 print('\n')
 
-
+boa_rds = (diff_net_boa / (cld_mls_brd_nt_boa) ) *100
+atm_rds = (diff_net_atm / ((cld_mls_brd_nt_toa - cld_mls_brd_nt_boa)))*100
+toa_rds = (diff_net_toa / (cld_mls_brd_nt_toa) ) *100
+c_rds   = c
 
 axs[1,0].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[1,0].plot(c, diff_net_atm, marker='o', label='ATM')
 axs[1,0].plot(c, diff_net_toa, marker='o', label='TOA')
 axs[1,0].set_title('Effective Snow Grain Radius')
-axs[1,0].set(xlabel='Effective Snow Grain Radius [$\mu m$]', ylabel='Change in Net flux [W/m2]')
+axs[1,0].set(xlabel='Effective Snow Grain Radius [$\mu m$]', ylabel='Change in Net flux [W/m$^2$]')
 
 
 ### Water Vapor Concetration ###
@@ -281,6 +302,12 @@ print('\n')
 print(diff_net_atm)
 print((diff_net_atm / (cld_mls_brd_nt_toa - cld_mls_brd_nt_boa))*100)
 print('\n')
+
+boa_wvc = (diff_net_boa / (cld_mls_brd_nt_boa) ) *100
+atm_wvc = (diff_net_atm / ((cld_mls_brd_nt_toa - cld_mls_brd_nt_boa)))*100
+toa_wvc = (diff_net_toa / (cld_mls_brd_nt_toa) ) *100
+c_wvc   = c
+
 axs[1,1].plot(c, diff_net_boa, marker='o', label='BOA')
 axs[1,1].plot(c, diff_net_atm, marker='o', label='ATM')
 axs[1,1].plot(c, diff_net_toa, marker='o', label='TOA')
@@ -288,17 +315,94 @@ axs[1,1].plot(c, diff_net_toa, marker='o', label='TOA')
 #axs[1,1].plot(c, spc_boa_abs, marker='o', label='SPC BOA ABS')
 #axs[1,1].plot(c, spc_boa_alb, marker='o', label='SPC BOA ALB')
 axs[1,1].set_title('Water Vapor Concentration')
-axs[1,1].set(xlabel='Column Relative Humidity [%]', ylabel='Change in Net flux [W/m2]')
+axs[1,1].set(xlabel='Column Relative Humidity [%]', ylabel='Change in Net flux [W/m$^2$]')
+
+label = ['a','c']
+for i in range(2):
+    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+    axs[i,0].text(0.9, 0.1, label[i], transform=axs[i,0].transAxes + trans,
+    fontsize='14', verticalalignment='top', fontfamily='serif',
+    bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
+
+label = ['b','d']
+for i in range(2):
+    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+    axs[i,1].text(0.9, 0.1, label[i], transform=axs[i,1].transAxes + trans,
+    fontsize='14', verticalalignment='top', fontfamily='serif',
+    bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
+
+#axs[0,0].axhline(y=0.0, color='k', linestyle='-')
+#axs[1,0].axhline(y=0.0, color='k', linestyle='-')
+#axs[0,1].axhline(y=0.0, color='k', linestyle='-')
+#axs[1,1].axhline(y=0.0, color='k', linestyle='-')
+
+axs[1,1].set_ylim(-4,6.0)
 
 fig.suptitle('Snow - Single Parameter Sensitivity', fontsize='16',fontweight='bold')
 plt.legend()
+
+
 
 plt.savefig('/Users/jtolento/Desktop/ppr1/mls_sps.eps')
 plt.show()
 
 
+fig, axs = plt.subplots(2, 2, figsize=(12,10))
+axs[0,0].axhline(y=0.0, color='k', linestyle='-')
+axs[1,0].axhline(y=0.0, color='k', linestyle='-')
+axs[0,1].axhline(y=0.0, color='k', linestyle='-')
+axs[1,1].axhline(y=0.0, color='k', linestyle='-')
+
+axs[0,0].plot(c_sza[:-1], boa_sza[:-1], marker='o', label='BOA')
+axs[0,0].plot(c_sza[:-1], atm_sza[:-1], marker='o', label='ATM')
+axs[0,0].plot(c_sza[:-1], toa_sza[:-1], marker='o', label='TOA')
+axs[0,1].set_xscale('log')
+axs[0,1].plot(c_cld[1:], boa_cld[1:], marker='o', label='BOA')
+axs[0,1].plot(c_cld[1:], atm_cld[1:], marker='o', label='ATM')
+axs[0,1].plot(c_cld[1:], toa_cld[1:], marker='o', label='TOA')
+axs[1,0].plot(c_rds, boa_rds, marker='o', label='BOA')
+axs[1,0].plot(c_rds, atm_rds, marker='o', label='ATM')
+axs[1,0].plot(c_rds, toa_rds, marker='o', label='TOA')
+axs[1,1].plot(c_wvc, boa_wvc, marker='o', label='BOA')
+axs[1,1].plot(c_wvc, atm_wvc, marker='o', label='ATM')
+axs[1,1].plot(c_wvc, toa_wvc, marker='o', label='TOA')
+
+axs[0,0].set_title('Solar Zenith Angle')
+axs[0,0].set(xlabel='Solar Zentih Angle', ylabel='Percent Change in Net flux [%]')
+axs[0,1].set_title('Cloud Optical Depth')
+axs[0,1].set(xlabel='Cloud Optical Depth', ylabel='Percent Change in Net flux [%]')
+axs[1,0].set_title('Snow Grain Radius')
+axs[1,0].set(xlabel='Snow Grain Radius [$\mu m$]', ylabel='Percent Change in Net flux [%]')
+axs[1,1].set_title('Water Vapor Concentration')
+axs[1,1].set(xlabel='Column Relative Humidity [%]', ylabel='Percent Change in Net flux [%]')
+
+plt.legend()
+axs[1,1].set_ylim(-4,8)
+axs[1,0].set_ylim(-1.2,0.2)
+axs[0,0].set_ylim(-2.5,0.5)
+axs[0,1].set_ylim(-15,12.5)
+label = ['a','c']
+for i in range(2):
+    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+    axs[i,0].text(0.9, 0.1, label[i], transform=axs[i,0].transAxes + trans,
+    fontsize='14', verticalalignment='top', fontfamily='serif',
+    bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
+
+label = ['b','d']
+for i in range(2):
+    trans = mtransforms.ScaledTranslation(10/72, -5/72, fig.dpi_scale_trans)
+    axs[i,1].text(0.9, 0.1, label[i], transform=axs[i,1].transAxes + trans,
+    fontsize='14', verticalalignment='top', fontfamily='serif',
+    bbox=dict(facecolor='0.7', edgecolor='none', pad=3.0))
 
 
+fig.suptitle('Snow - Single Parameter Sensitivity (Percent Change)', fontsize='16',fontweight='bold')
+plt.savefig('/Users/jtolento/Desktop/ppr1/mls_sps_per.eps')
+plt.legend()
+plt.show()
+
+
+'''
 ### WATER VAPOR INSOLATION ###
 def wtr_plot(filename, humidity):
         path_clr = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/'
@@ -369,3 +473,4 @@ plt.ylabel('Fractional Flux', fontsize=14)
 plt.grid(which='major', axis='both')
 plt.legend()
 plt.show()
+'''
