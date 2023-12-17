@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Used to learn how import and plot merra data into python. Started on 01/24/21
+Calculate effective solar zenith angle for TZW23
 """
 
 from matplotlib import pyplot as plt

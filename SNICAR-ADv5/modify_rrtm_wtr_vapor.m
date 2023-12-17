@@ -1,297 +1,297 @@
 clc;clear all; close all;clc;
-%%% WATER PROFILES %%%
+%% WATER PROFILES %%%
 
- inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
- outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd00';
- inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
- outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc00';
+ inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+ outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd00';
+ inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+ outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc00';
  scalar = 0.0;
  modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
  modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd1';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc1';
-scalar = 0.1;
-modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
-modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
-
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd2';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc2';
+ inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+ outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd1';
+ inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+ outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc1';
+ scalar = 0.1;
+ modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
+ modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
+ 
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd2';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc2';
 scalar = 0.2;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd3';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc3';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd3';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc3';
 scalar = 0.3;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd4';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc4';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd4';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc4';
 scalar = 0.4;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd5';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc5';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd5';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc5';
 scalar = 0.5;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd6';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc6';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd6';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc6';
 scalar = 0.6;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd7';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc7';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd7';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc7';
 scalar = 0.7;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd8';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc8';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd8';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc8';
 scalar = 0.8;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd9';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc9';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd9';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc9';
 scalar = 0.9;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_brd10';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/test/input_trp_spc10';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd10';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_spc10';
 scalar = 1.0;
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
 
- %%% SNOW PROFILES %%%
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd00';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc00';
+ %% SNOW PROFILES %%%
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd00';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc00';
 scalar = 0.0;
 disp('Humidity 0%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd1';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc1';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd1';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc1';
 scalar = 0.1;
 disp('Humidity 10%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd2';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc2';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd2';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc2';
 scalar = 0.2;
 disp('Humidity 20%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd3';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc3';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd3';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc3';
 scalar = 0.3;
 disp('Humidity 30%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd4';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc4';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd4';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc4';
 scalar = 0.4;
 disp('Humidity 40%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd5';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc5';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd5';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc5';
 scalar = 0.5;
 disp('Humidity 50%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd6';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc6';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd6';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc6';
 scalar = 0.6;
 disp('Humidity 60%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
- inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
- outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd7';
- inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
- outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc7';
+ inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+ outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd7';
+ inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+ outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc7';
  scalar = 0.7;
  disp('Humidity 70%')
  modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
  modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd8';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc8';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd8';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc8';
 scalar = 0.8;
 disp('Humidity 80%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd9';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc9';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd9';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc9';
 scalar = 0.9;
 disp('Humidity 90%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_brd10';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/test/input_mls_spc10';
-scalar = 1.0;
-disp('Humidity 100%')
-modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
-modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
+ inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd';
+ outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_brd10';
+ inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc';
+ outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/snw_wvc/input_mls_spc10';
+ scalar = 1.0;
+ disp('Humidity 100%')
+ modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
+ modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
 
 
-%%% ICE PROFILES %%% 
+%% ICE PROFILES %%% 
 
 
- inputFilePath_brd  = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
- outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd00';
- inputFilePath_spc  = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
- outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc00';
+ inputFilePath_brd  = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+ outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd00';
+ inputFilePath_spc  = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+ outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc00';
  scalar = 0.0;
  modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
  modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
  
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd1';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc1';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd1';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc1';
 scalar = 0.1;
 disp('Humidity 10%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd2';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc2';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd2';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc2';
 scalar = 0.2;
 disp('Humidity 20%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd3';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc3';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd3';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc3';
 scalar = 0.3;
 disp('Humidity 30%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd4';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc4';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd4';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc4';
 scalar = 0.4;
 disp('Humidity 40%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd5';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc5';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd5';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc5';
 scalar = 0.5;
 disp('Humidity 50%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd6';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc6';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd6';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc6';
 scalar = 0.6;
 disp('Humidity 60%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
- inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
- outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd7';
- inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
- outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc7';
+ inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+ outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd7';
+ inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+ outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc7';
  scalar = 0.7;
  disp('Humidity 70%')
  modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
  modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd8';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc8';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd8';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc8';
 scalar = 0.8;
 disp('Humidity 80%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd9';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc9';
+inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd9';
+inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc9';
 scalar = 0.9;
 disp('Humidity 90%')
 modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
 modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
-inputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd';
-outputFilePath_brd = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_brd10';
-inputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc';
-outputFilePath_spc = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/test/input_sas_spc10';
-scalar = 1.0;
-disp('Humidity 100%')
-modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
-modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
+ inputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd';
+ outputFilePath_brd = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_brd10';
+ inputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc';
+ outputFilePath_spc = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/ice_wvc/input_sas_spc10';
+ scalar = 1.0;
+ disp('Humidity 100%')
+ modify_rrtm_wtr_vpr(inputFilePath_brd, outputFilePath_brd,scalar)
+ modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
 
 
@@ -299,8 +299,8 @@ modify_rrtm_wtr_vpr(inputFilePath_spc, outputFilePath_spc,scalar)
 
 function modify_rrtm_wtr_vpr(inputFilePath, outputFilePath,scalar)
 % File paths
-%inputFilePath = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
-%outputFilePath = '/Users/jtolento/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brdtest';
+%inputFilePath = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brd';
+%outputFilePath = '/Users/jtolento/TZW23/RRTMG_SW/run_examples_std_atm/ppr1/sps/wtr_wvc/input_trp_brdtest';
 %scalar = 1.0;
 % Read the input file
 fidIn = fopen(inputFilePath, 'r');
@@ -381,30 +381,38 @@ while ~feof(fidIn)
                     disp('warning')
                     q = 0.0;
                 else
-                    q = eps_H2O*sat_vpr_lqd/(prs-one_mns_eps_H2O*sat_vpr_lqd);
+                    %q = eps_H2O*sat_vpr_lqd/(prs-one_mns_eps_H2O*sat_vpr_lqd);
+                    svp = sat_vpr_lqd;
+
+                    R = 8.314; % J / (mol * K)
+                    avo_nbr = 6.02*10^23; % avogadros number
+                    mm_air = 28.97;  %molar mass air 
+                    mm_h2o = 18.015; %molar mass water 
+                    n_h2o = (svp*100) / (R*tpt) * mm_h2o;    % g/m^3
+                    n_air = (prs*100) / (R*tpt) * mm_air; %  g/m^3
+    
+                    molec_h2o = n_h2o * avo_nbr / mm_h2o;
+                    molec_air = n_air * avo_nbr / mm_air;
+                    mmr_h2o = n_h2o / n_air;           
+                    vmr_h2o = molec_h2o / molec_air ; 
+                    disp('pressure')
+                    %disp(prs)
+                    %disp(svp)
+                    %disp(mmr_h2o)
+                    %disp(vmr_h2o)
+                    q = vmr_h2o;
                 end
+               
                 
-                
-                
-                
-                
-                % CGPT
-                %e = 6.112 * exp((17.67 * tpt) / (tpt + 243.5));
-                %q = 0.622 * (e / (P - e));
-                %elseif(tpt<=273.15)
-                %sat_vpr_ice=100.0*exp(24.3-6148./tpt(idx))
-                %end
-                %Hartmann
-                %L = 2.5*10^6;
-                %R = 461;
-                %es = 6.11*exp((L/R)*((1/273)-(1/tpt)));
-                %q = 0.622* es / prs /1000;
-                if (q<= 0.0)
+                if (q < 0.0)
                     disp('negative:')
                     disp(tpt)
                     disp(prs)
+                    disp(q)
                     q = 0.0;
                 end
+                
+                
                 if (prs <= 1.5)
                     q = 0.0;
                 end
@@ -412,16 +420,14 @@ while ~feof(fidIn)
                 % Format x and y in exponential notation
                 xFormatted = sprintf('%0.7E', x);
                 yFormatted = sprintf('%0.7E', y);
-                disp(xFormatted)
-                disp(yFormatted)
                 %disp(xFormatted)
                 %disp(yFormatted)
                 
                 % Replace x with y in the line
                 modifiedLine = strrep(line, xFormatted, yFormatted);
-                disp(modifiedLine)
-                modifiedLines{end+1} = modifiedLine;
                 %disp(modifiedLine)
+                modifiedLines{end+1} = modifiedLine;
+                %disp('CHECK')
                 %disp(line)
                 % Write the modified line to the output file
                 
@@ -444,6 +450,7 @@ end
 % Write the modified lines to the output file
 for i = 1:numel(modifiedLines)
     fprintf(fidOut, '%s\n', modifiedLines{i});
+    %disp(modifiedLines{i})
 end
 
 str_end1 = '%%%%%';

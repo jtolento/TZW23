@@ -1,6 +1,6 @@
 #/bin/env python                                                                    
 '''                                                                                 
-Python scrpit to generate figure for first manuscript                               
+Python scrpit to generate figure 5 for TZW23
 '''
 
 from matplotlib import pyplot as plt
